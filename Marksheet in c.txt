@@ -1,0 +1,129 @@
+
+// ...............................MARKSHEET ASSIGNMENT.............................................
+// .............................PROGRAMMING FUNDAMENTAL............................................
+// Student Name: Danial Khan.
+// Father Name: Hilal Ahmed Khan.
+// Program: ADP-CS.
+// Semester: 1st.
+// Timing: Evening.
+// Student ID: ACS-E/FL-21/03.
+
+
+#include <stdio.h>
+
+void main() {
+
+  char name[30], grade; // ASSIGN VARIABLE FOR USER NAME AND GRADE..
+  int standard, rollNo; // ASSIGN VARIABLE FOR USER CLASS AND ROLL NO..
+  float computer, english, mathematics, obtained, percentage; // ASSIGN EACH SUBJECT, OBTAINED MARKS AND PERCENTAGE..
+
+  while(1){  // FOR PROGRAM ITERATION..
+
+    // INPUT USER NAME, CLASS, AND SUBJECT MARKS..
+    printf("---------MARKSHEET----------\n");
+    printf("Enter Your Name: ");
+    scanf("%s", &name);
+    printf("Enter Your Class: ");
+    scanf("%d", &standard);
+    printf("Enter Your Roll No: ");
+    scanf("%d", &rollNo);
+    printf("\n\n");
+    printf("Enter Your Computer Marks: ");
+    scanf("%f", &computer);
+
+    // CODITIONS FOR SUBJECTS INPUT MUST BE IN BETWEEN 0 AND 100 && 0 AND 50..
+
+    // CONDITION FOR COMPUTER..
+    if(computer >= 0 && computer <=100){ // COMPUTER MARKS MUST BE 0, 100 OR IN BETWEEN 0 AND 100..
+        printf("Computer Marks: %.2f\n", computer);
+        printf("\n");
+    } else{
+        printf("Marks must be in between 0 and 100\n"); // ERROR MESSAGE..
+        printf("\n");
+        continue;
+    }
+
+    // CONDITION FOR ENGLISH MARKS..
+    printf("Enter Your English Marks: ");
+    scanf("%f", &english);
+    if(english >= 0 && english <=50){ // ENGLISH MARKS MUST BE 0, 50 OR IN BETWEEN 0 AND 50..
+        printf("English Marks: %.2f\n", english);
+        printf("\n");
+    } else{
+        printf("Marks must be in between 0 and 50\n"); // ERROR MESSAGE..
+        printf("\n");
+        continue;
+    }
+
+    // CONDITION FOR MATHEMATICS MARKS..
+    printf("Enter Your Mathematics Marks: ");
+    scanf("%f", &mathematics);
+    if(mathematics >= 0 && mathematics <=100){  // MATHEMATICS MARKS MUST BE 0, 100 OR IN BETWEEN 0 AND 100..
+        printf("Mathematics Marks: %.2f\n", mathematics);
+        printf("\n");
+    } else{
+        printf("Marks must be in between 0 and 100\n"); // ERROR MESSAGE..
+        printf("\n");
+        continue;
+    }
+
+    // PRINT USER NAME, CLASS AND ROLL NO..
+    printf("---------%s Result---------\n", name);
+    printf("Student Name: %s\n", name);
+    printf("Student Class: %d\n", standard);
+    printf("Student Roll No: %d\n", rollNo);
+
+    // CALCULATING AND PRINTING OBTAINED MARKS AND PERCENTAGE..
+    obtained = computer + english + mathematics;
+    printf("Your obtained Marks: %.2f\n", obtained);
+    percentage = obtained * 100 / 250;
+    printf("Percentage: %.2f\n", percentage);
+
+    // CONDITIONS FOR PERCENTAGE TO ASSIGN AND PRINT GRADES..
+    if(percentage <=33){
+        printf("Fail\n");
+    } else if(percentage <=39){
+        grade = 'E';
+        printf("Grade %c\n", grade);
+    } else if(percentage <=49){
+        grade = 'D';
+        printf("Grade %c\n", grade);
+    } else if(percentage <=59){
+        grade = 'C';
+        printf("Grade %c\n", grade);
+    } else if(percentage <=69){
+        grade = 'B';
+        printf("Grade %c\n", grade);
+    } else if(percentage <=100){
+        grade = 'A';
+        printf("Grade %c\n", grade);
+    }
+
+    // SWITCH CONDITION FOR MAKING AND PRINTING REMARKS DEPENDING ON GRADES..
+    printf("Remarks: ");
+    switch(grade){
+        case 'A':
+            printf("Excellent Performance\n");
+            printf("\n");
+            break;
+        case 'B':
+            printf("Good\n");
+            printf("\n");
+            break;
+        case 'C':
+            printf("Keep it up\n");
+            printf("\n");
+            break;
+        case 'D':
+            printf("Needs Improvement\n");
+            printf("\n");
+            break;
+        case 'E':
+            printf("Poor\n");
+            printf("\n");
+            break;
+    }
+  }
+}
+
+// PROGRAM END.........................................................................
