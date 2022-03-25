@@ -1,13 +1,5 @@
 
 // ...............................MARKSHEET ASSIGNMENT.............................................
-// .............................PROGRAMMING FUNDAMENTAL............................................
-// Student Name: Danial Khan.
-// Father Name: Hilal Ahmed Khan.
-// Program: ADP-CS.
-// Semester: 1st.
-// Timing: Evening.
-// Student ID: ACS-E/FL-21/03.
-
 
 #include <stdio.h>
 
